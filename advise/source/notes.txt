@@ -1,0 +1,2 @@
+Use thickbox for lightboxy stuff - it interacts nicely with jquery
+icons: famfam silk icons

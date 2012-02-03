@@ -1,0 +1,17 @@
+> Name and identifying information
+> Save the schedule
+> Search by faculty member
+> What happens if you fail a course/etc?
+
+> dropdown box
+> Credits requirements rules
+> rename the semesters (dropdown for fall/spring)
+> Put things in place that must be on schedule - ICB, UOCD, etc.
+> Put it online
+
+colorcoding
+sandbox - courses you'd like to take
+courses on bottom, requirements on side?
+
+Plan complete versus tentative
+4-year plan

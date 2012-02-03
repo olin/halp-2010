@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="lib/jquery-1.3.js"></script>
+<script src="lib/jquery.ui.all.js"></script>
+<script src="lib/jquery.layout.js"></script>
+<script src="lib/json2.js"></script>
+<script src="lib/thickbox-compressed.js"></script>
+<script src="lib/thickbox_custom.js"></script>
+
+<!-- http://trentrichardson.com/Impromptu/index.php -->
+<script src="lib/jquery-impromptu.1.8.js"></script>
+<link rel="stylesheet" type="text/css" href="css/ui/ui.all.css" />
+
+<script src="main.js" language="javascript" type="text/javascript"></script>
+
+<script src="js/Box.js" language="javascript" type="text/javascript"></script>
+<script src="js/Buttons.js" language="javascript" type="text/javascript"></script>
+<script src="js/ContentPane.js" language="javascript" type="text/javascript"></script>
+<script src="js/Images.js" language="javascript" type="text/javascript"></script>
+<script src="js/Login.js" language="javascript" type="text/javascript"></script>
+<script src="js/Manager.js" language="javascript" type="text/javascript"></script>
+<script src="js/Options.js" language="javascript" type="text/javascript"></script>
+<script src="js/Rules.js" language="javascript" type="text/javascript"></script>
+<script src="js/Schedule.js" language="javascript" type="text/javascript"></script>
+<script src="js/Semesters.js" language="javascript" type="text/javascript"></script>
+<script src="js/Store.js" language="javascript" type="text/javascript"></script>
+<script src="js/Ticks.js" language="javascript" type="text/javascript"></script>
+<script src="js/Tips.js" language="javascript" type="text/javascript"></script>
+<script src="js/User.js" language="javascript" type="text/javascript"></script>
+<script src="js/Utils.js" language="javascript" type="text/javascript"></script>
+
+<!--
+<script src="lib/niftycube.js"></script>
+<link rel="stylesheet" type="text/css" href="lib/niftyCorners.css" />
+-->
+<link href="css/styles.css" title="defaultstyle" rel="stylesheet" type="text/css">
+<link href="css/main.css" title="defaultstyle" rel="stylesheet" type="text/css">
+<link href="css/impromptu.css" title="defaultstyle" rel="stylesheet" type="text/css">
+<style type="text/css">
+.ui-layout-pane { /* all 'panes' */ 
+	background: #ffffff; 
+	border: 1px solid #bbbbbb; 
+	padding: 0px;
+	margin: 0px;
+	overflow: auto;
+}
+.ui-layout-resizer {
+	background: #cccccc; 
+}
+.ui-layout-resizer:hover {
+	background: #ccccff;
+}
+
+.ui-layout-toggler {
+	background: #aaaaaa; 
+}
+.ui-layout-toggler:hover {
+	background: #aaaaff;
+}
+
+.ui-layout-north {
+	border: 0; padding: 0;
+	background-color: #BBBBBB;
+	overflow: hidden;
+}
+.ui-layout-center {
+	border-top: 0px; padding: 0;
+	background-color: #555555;
+}
+
+.bottom-inner-west {
+	display: block !important;
+}
+.bottom-inner-center {
+	display: block !important;
+}
+
+.manage-north {
+	border: 0; padding: 0;
+	background-color: #555555;
+	overflow: hidden;
+}
+.manage-west {
+	background: #cccccc;
+}
+.manage-center {
+	border-top: 0px; padding: 0;
+	background: #999999;
+}
+
+#cnt_managecourses {
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+#dialog {
+	display: none;
+}
+</style>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>HALP</title>
+</head>
+<body>
+
+<div id="dialog" title="Dialog Title">Dialog</div>
+
+<div id="popups">
+	<div id="popoptions">
+		<div id="popoptions_main">
+			<h2>User Options</h2>
+			<ul>
+				<li><b>Major:</b>
+					<select id="majorselect" onchange="Options.updatemajordesc();"></select>
+					<button id="savemajor" onclick="Options.savemajor()" disabled="disabled">Change</button>
+					<div id="majordesc"></div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="poplogin">
+		<div id="poplogintabs">
+			<ul>
+				<li><a href="#login-loginpage"><span>Login</span></a></li>
+				<li><a href="#login-registerpage"><span>Register</span></a></li>
+			</ul>
+			<div id="login-loginpage">
+				<div id="login-msg">You must be logged in to perform that action.</div>
+				<dl class="loginfields" style="padding-top: 5px">
+					<dt>Username <span style="font-weight: normal; font-size: 80%">(email address before @)</span></dt>
+					<dd><input type="text" id="login-user" size="25"></dd>
+					<dt>Password</dt>
+					<dd><input onkeypress="Login.passKeyPress(event)" type="password" id="login-pass" size="25"></dd>
+					<dt></dt>
+					<dd><button onclick="Login.doLoginClick()" id="login-button">Login</button></dd>
+				</dl>
+				<div><a href="javascript:Login.doForgotPassClick()">Lost password? Click here.</a></div>
+			</div>
+			<div id="login-registerpage">
+				<div id="register-msg">
+					Please enter your email address below. 
+					You should receive a message with a link to continue the registration process.
+				</div>
+				<dl class="loginfields" style="padding-top: 5px">
+					<dt>Email Address</dt>
+					<dd><input onkeypress="Login.registerKeyPress(event)" type="text" id="register-email" size="25"></dd>
+					<dd><button onclick="Login.doRegisterClick()" id="register-button">Submit</button></dd>
+				</dl>
+				<div id="register-status">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="ui-layout-north">
+	<div>
+		<div id="mt_longtermplan" onclick="Buttons.maintabClick(this)" class="maintab down">Long-Term Plan</div>
+		<!-- <div class="maintab">Semester Plan</div> -->
+		<div id="mt_managecourses" onclick="Buttons.maintabClick(this)" class="maintab">Manage Courses</div>
+		
+		<div id="mt_userlogin" class="button" onclick="Login.showLogin()">
+			<img src="img/user.png" align="absmiddle">
+			<div class="usertext" style="display:inline;">[Login]</div>
+		</div>		
+	</div>
+</div>
+
+<div class="ui-layout-center">
+	<div id="cnt_longtermplan">
+		<div id="center">
+			<div id="semcontrols">
+				<span style="float:left">Major: <select id="sem_majorchange" onchange="Buttons.majorselect()"></select></span>
+				
+				<span id="btn-print" class="button" onclick="Buttons.print()" style="float:right; margin-top: -4px; margin-right: 5px;">
+					<img src="img/printer.png" align="absmiddle">
+					<span id="btn-printtext">Print</span>
+				</span>
+				
+				<span id="btn-save" class="button" onclick="Buttons.save()" style="float:right; margin-top: -4px; margin-right: 5px;">
+					<img src="img/disk.png" align="absmiddle">
+					<span id="btn-savetext">Saved</span>
+				</span>
+			</div>
+			<div id="semesters">
+				<div id="semappend"></div>
+			</div>
+			<div id="messages">
+				
+			</div>
+		</div>
+	</div>
+	
+	<div id="cnt_managecourses" style="display:none;">
+		<div class="manage-north">
+			<!-- north -->
+		</div>
+		<div class="manage-west">
+			<div>
+				<select id="manage_sourcesel" onchange="Manager.selectSource(this)"></select>	
+			</div>
+			<div id="manage_courselist">
+				<table class="courseeditlist" cellpadding="0" cellspacing="0">
+					<thead>
+						<tr><th>Code</th><th>Nickname</th></tr>
+					</thead>
+					<tbody id="manage_courseinsert">
+					</tbody>
+				</table>
+			</div>
+			<div id="manage_courselistnew">
+				<button onclick="Manager.addNewCourse()">Add New</button>
+			</div>
+		</div>
+		<div class="manage-center">
+			<div id="manage_revisionarea">
+				<div id="manage_revisionheader">
+					Revisions
+				</div>
+				<table class="revisionslist" cellpadding="0" cellspacing="0">
+					<thead>
+						<tr><th>Date</th><th>User</th></tr>
+					</thead>
+					<tbody id="manage_revisionsinsert">
+					</tbody>
+				</table>
+			</div>
+			<div id="manage_editarea">
+				
+			</div>
+			<div id="manage_intromessage">
+				Please select a course at left to edit.
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="ui-layout-south">
+	<div class="bottom-inner-west">
+		<div id="creditsbox">
+			
+		</div>	
+	</div>
+	<div class="bottom-inner-center">
+		<div id="bottombar">
+			<!-- <div class="bottomexpl">
+				Requirements
+			</div>-->
+			<div id="rulesarea">
+				
+			</div>
+		</div>		
+	</div>
+</div>
+
+<div class="ui-layout-east">
+	<div id="coursebar">
+		<div class="bottomexpl">
+			All Courses
+		</div>
+		<div id="clheader">
+			<div style="float:left">
+				<div>
+					<input id="search" type="text" onkeyup="Buttons.dosearch()"/>
+					<img id="searchimg" src="img/find.png"/>
+				</div>
+				<div>
+					<input type="checkbox" id="search_title" checked="yes" onclick="Buttons.dosearch()"/> Title
+					<input type="checkbox" id="search_faculty" checked="yes" onclick="Buttons.dosearch()"/> Faculty
+					<input type="checkbox" id="search_semlimit" onclick="Buttons.dosearch()"/>Only Show <select id="search_semdropdown" onchange="Offerings.semLimitChange()"></select>
+				</div>
+			</div>
+			<div style="float:left">
+				
+			</div>
+		</div>
+		<div id="courselist">
+			
+		</div>			
+	</div>
+</div>
+
+</body>
+</html>

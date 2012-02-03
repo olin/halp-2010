@@ -1,0 +1,5 @@
+INSERT INTO `Users` (`Name`, `Password`, `Email`, `Major`, `Semesters`) VALUES
+('Guest','Guest','spacrm@hotmail.com','ECE','[12,13,14,15,16,17,18,19]'),
+('ece','ece','spacrm@hotmail.com','ECE','[12,13,14,15,16,17,18,19]'),
+('me','me','spacrm@hotmail.com','ECE','[12,13,14,15,16,17,18,19]'),
+('less','less','spacrm@hotmail.com','ECE','[12,13,14,15,16,17,18,19]');

@@ -1,0 +1,24 @@
+<script src="lib/jquery.flydom-3.1.1-min.js"></script>
+
+	//array to build semester objects from
+	var buildarr = [];
+	for (var x = 0; x < NUMSEMS; ++x) {
+		buildarr.push("div");
+		buildarr.push({className: "semester"});
+		var sb = [];
+		sb.push("div"); sb.push({className: "semdesc"}); sb.push("Semester " + (x+1));
+		sb.push("div"); sb.push({className: "semblock", id: "sem" + x});
+		var ticks = [];
+
+		for (var y = 0; y < MAXCREDITS; ++y) {
+			ticks.push("div");
+			ticks.push({className: "semtick", style: origTickStyle(x,y)[0], id: "sem-" + x + "-" + y});
+			ticks.push("");
+		}
+		sb.push(ticks);
+		buildarr.push(sb);
+	}
+
+	$("#semappend").createAppend(
+		"div", {className: "allSemBlock"}, buildarr
+	);

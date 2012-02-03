@@ -1,0 +1,3 @@
+Robotics (ENGR3390) has no credits associated with it.
+Changed the format of ENGR3520A to not destroy things.
+Prerequisites was spelled wrong for Relativity (SCI 2140)

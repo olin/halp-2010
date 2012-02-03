@@ -1,0 +1,8 @@
+	when is the prototype ready for testing?
+	Drag courses separately from frames(still a little buggy)
+	Visual cues for bins
+	Remove courses from bins while they're being dragged
+"Fixed" coloring/designation
+Have some "sample" layouts
+	Colors for type of class
+	Dynamic resizing vertically

@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="lib/jquery-1.2.6.min.js"></script>
+<script src="lib/jquery-ui-personalized-1.5.min.js"></script>
+<script src="lib/json2.js"></script>
+<script src="lib/thickbox-compressed.js"></script>
+<link rel="stylesheet" type="text/css" href="lib/thickbox.css" />
+<script src="main.js"></script>
+<!--
+<script src="lib/niftycube.js"></script>
+<link rel="stylesheet" type="text/css" href="lib/niftyCorners.css" />
+-->
+<style type="text/css">
+/* thanks to http://www.alistapart.com/articles/multicolumnlayouts/ */
+html {
+	height: 100%;
+	overflow: hidden;
+}
+body {
+	margin:0 0px;
+	padding:0px 0px 0px 200px;
+	font: normal 12px auto "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	height: 100%;
+	overflow: hidden;
+	background-color: #000000;
+}
+#header {
+	background-color: #333333;
+	color: #FFFFFF;
+	width: 100%;
+	height: 2.5em;
+	display: block;
+	margin-bottom: -2.5em;
+}
+.headleft {
+	float: left;
+	padding: 3px;
+	font-size: 18px;
+	margin-bottom: -2.5em;
+}
+#headexpl {
+	font-size: 12px;
+	padding: 4px;
+}
+.headright {
+	float: right;
+	padding: 2px;
+	margin-bottom: -30px;
+}
+.headbtn {
+	padding: 2px;
+	margin: 2px;
+	border: 1px solid #CCCCCC;
+	background-color: #555555;
+	font-size: 14px;
+	display: inline;
+	cursor: pointer;
+}
+#container {
+  background-color: #555555;/*#F0F0F0;*/
+  float:left;
+  width:100%;
+  border-right:200px solid #E0E0E0;
+  margin-left:-200px;
+  margin-right:-200px;
+  display:inline; /* So IE plays nice */
+  height: 100%;
+}
+#center {
+  margin-top:30px;
+  float: left;
+  width:100%;
+  margin-right:-100%;
+}
+#right {
+  float:right;
+  width:200px;
+  margin-right:-200px;
+  position:relative;
+  height: 100%;
+}
+#messages {
+	background-color: #555555; /*#F0F0F0;*/
+	clear: both;
+	padding: 5px;
+	overflow: auto;
+}
+#semesters {
+	position: relative;
+	background-color: #666666;/*#C0C0C0;*/
+	margin:5px;
+	clear: both;
+	padding-bottom: 50px;
+}
+.semester
+{
+	position: relative;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	clear: both;
+}
+.semdesc {
+	position: relative;
+	background-color: #666666; /*#C0C0C0;*/
+	text-align: right;
+	height: 50px;
+	float: left;
+	width: 6.5em;
+	color: white;
+}
+.semblock {
+	position: relative;
+	display: block;
+	margin-left: 7em;
+}
+.semtick {
+	position: absolute;
+	float: left;
+	background-color: #FFFFFF;
+	height: 50px;
+	top: 0;
+}
+#coursebar {
+	padding: 3px;
+	height: 100%;
+}
+#clheader {
+	height: 3.5em;
+	margin-bottom: 3px;
+}
+#courselist {
+	height: 85%;
+	overflow: auto;
+}
+#clinner {
+	height: 100%;
+}
+#search {
+	width: 160px;
+	font-size: 16px;
+}
+
+/* Courses on right side */
+
+.course {
+	background-color: #CCCCFF;
+	height: 48px;
+	text-align: center;
+	float: left;
+	overflow: hidden;
+	border: 1px solid #666666;
+}
+.coursecode {
+	font-size: 80%;
+	font-weight: bold;
+}
+.coursetitle {
+	font-size: 80%;
+}
+
+/* Rules in lower area */
+
+.rule {
+	background-color: #CCCCCC;
+	border: 1px solid #CCCCCC;
+	padding: 2px;
+	margin-top: 2px;
+	cursor: pointer;
+}
+.ruleover {
+	background-color: #EEEEEE !important;
+}
+.statusimg {
+	margin-right: 5px;
+}
+.rulecategory {
+	margin-bottom: 4px;
+	padding-left: 2px;
+	border-left: 6px solid #CCCCFF;
+}
+.rulecategoryhead {
+	font-size: 120%;
+	font-weight: bold;
+	margin-left: -8px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-color: #CCCCFF;
+	cursor: pointer;
+}
+
+/* Splash area and login prompt */
+
+#splash {
+	position: absolute;
+	width: 350px;
+	height: 300px;
+	margin-left: -175px;
+	margin-top: -200px;
+	background-color: #666666;
+	border: 1px solid #AAAAAA;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	left: 50%;
+	top: 50%;
+}
+#login {
+	position: absolute;
+	text-align: left;
+	left: 25px;
+	top: 200px;
+	width: 300px;
+	height: 120px;
+	background-color: #999999;
+}
+#logininner {
+	padding: 5px;
+}
+#biglogintext {
+	font-weight: bold;
+	font-size: 16px;
+	padding-bottom: 8px;
+}
+.logindesc {
+	position: relative;
+	display: block;
+	text-align: right;
+	font-weight: bold;
+	float: left;
+	width: 80px;
+	height: 25px;
+}
+.loginfield {
+	clear: both;
+}
+.loginfield input {
+	float: left;
+	width: 170px;
+}
+#loginsubmit {
+	width: 290px;
+	text-align: center;
+	clear: both;
+}
+
+/* Popup windows from main window */
+#popups {
+	display: none;
+}
+#popoptions_main {
+	padding-top: 10px;
+}
+#popoptions_main ul {
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+/* hide the print-only header */
+@media screen {
+	#printheader {
+		display: none;
+	}	
+}
+
+/* CSS FTW! */
+@media print {
+	#right {
+		display: none;
+	}
+	#container {
+		border-right:0px;
+		margin-left:0px;
+		margin-right:0px;
+		background-color: white;
+	}
+	#semesters {
+		background-color: white;
+	}
+	.semdesc {
+		background-color: white;
+		color: black;
+	}
+	body {
+		padding: 0px;
+		overflow: visible;
+		background-color: white;
+	}
+	#header {
+		display: none;
+	}
+	#printheader {
+		display: block;
+		background-color: white;
+		color: black;
+		width: 100%;
+		height: 2.5em;
+		display: block;
+		margin-bottom: -2.5em;
+	}
+	#printheadleft {
+		color: black;
+		float: left;
+		padding: 3px;
+		font-size: 18px;
+		margin-bottom: -2.5em;		
+	}
+	#messages {
+		background-color: white;
+		overflow: visible;
+	}
+	.rulecategoryhead {
+		background-color: white;
+	}
+	.rule {
+		background-color: white;
+		padding-left: 30px;
+	}
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>HALP</title>
+</head>
+<body>
+	
+<div id="splash">
+	<img id="splashlogo" src="img/halplogo.jpg"/>
+	<div id="login">
+		<div id="logininner">
+			<form style="padding:0px;margin:0px;" action="javascript:processlogin()">
+			<div id="biglogintext">
+				<img id="loginicon" src="img/lock.png" align="absmiddle"/> <span id="loginheadtext">Login</span>
+			</div>
+			<div>
+				<div class="loginfield"><span class="logindesc">Username:</span><input id="username" type="text" value=""/></div>
+				<div class="loginfield"><span class="logindesc">Password:</span><input id="password" type="password" value=""/></div>
+			</div>
+			<div id="loginsubmit"><input id="dologin" type="submit" value="Submit" disabled="disabled"/></div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div id="popups">
+	<div id="popoptions">
+		<div id="popoptions_main">
+			<h2>User Options</h2>
+			<ul>
+				<li><b>Major:</b>
+					<select id="majorselect" onchange="Options.updatemajordesc();"></select>
+					<button id="savemajor" onclick="Options.savemajor()" disabled="disabled">Change</button>
+					<div id="majordesc"></div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="container" style="display: none;">
+   <div id="printheader">
+   		<div id="printheadleft">
+   			HALP: Schedule for <span class="usertext">Joe Schmoe</span>. Printed <span id="curdate"></span>
+   		</div>
+   </div>
+	<div id="header">
+	   <div class="headleft">
+	   		<b>HALP</b> <span id="headexpl"><b>H</b>elper for <b>A</b>dvising and <b>L</b>ong Term <b>P</b>lanning</span>
+	   </div>
+	   <div class="headright">
+			<div class="headbtn" onclick="button_connect()">
+				<img src="img/connect.png" align="absmiddle" />&nbsp;<span class="usertext">Joe Schmoe</span>
+			</div>
+			<div class="headbtn" onclick="button_options()">
+				<img src="img/wrench.png" align="absmiddle" />&nbsp;Options
+			</div>
+			<div class="headbtn" onclick="button_save()">
+				<img src="img/disk.png" align="absmiddle" />&nbsp;<span id="savetext">Saved</span>
+			</div>
+			<div class="headbtn" onclick="button_print()">
+				<img src="img/printer.png" align="absmiddle" />&nbsp;Print
+			</div>
+	   </div>
+	</div>
+  <div id="center">
+  	<div id="semesters">
+  		<div id="semappend"></div>
+  	</div>
+  	<div id="messages">
+  		
+  	</div>
+  </div>
+  <div id="right">
+  	<div id="coursebar">
+  		<div id="clheader">
+  			<div>
+				<input id="search" type="text" onkeyup="dosearch()"/>
+				<img id="searchimg" src="img/find.png"/>
+  			</div>
+  			<div>
+  				<input type="checkbox" id="search_title" checked="yes" onclick="dosearch()"/> Title
+  				<input type="checkbox" id="search_faculty" checked="yes" onclick="dosearch()"/> Faculty
+  			</div>	
+		</div>
+  		<div id="courselist">
+  			
+  		</div>
+  	</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,424 @@
+#header {
+	background-color: #333333;
+	color: #FFFFFF;
+	width: 100%;
+	display: block;
+}
+.headleft {
+	float: left;
+	padding: 3px;
+	font-size: 18px;
+}
+#headexpl {
+	font-size: 12px;
+	padding: 4px;
+}
+.headright {
+	float: right;
+	padding: 2px;
+}
+.headbtn {
+	padding: 2px;
+	margin: 2px;
+	border: 1px solid #CCCCCC;
+	background-color: #555555;
+	font-size: 14px;
+	display: inline;
+	cursor: pointer;
+}
+#container {
+	background-color: #555555;
+}
+#center {
+	background-color: #555555;
+}
+
+#bottombar {
+	background-color: #999999;
+	position: relative;
+}
+
+
+/* Top area */
+.maintab {
+	display: block;
+	border: 1px solid #ffffff;
+	font-size: 15px;
+	height: 25px;
+	float: left;
+	padding: 1px 5px 1px 5px;
+	margin: 2px 1px 1px 10px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.maintab:hover {
+	color: #ffffff;
+}
+.maintab.down {
+	background: #555555;
+	color: #ffffff;
+}
+
+.button {
+	color: #000000;
+	border: 1px solid #ffffff;
+	background: #999999;
+	padding: 1px 5px 1px 5px;
+	font-size: 13px;
+	height: 20px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.button:hover {
+	color: #ffffff !important;
+}
+
+#mt_userlogin {
+	display: block;
+	float: right;
+	margin-top: -2px;
+	margin-right: 10px;
+}
+
+/* For viewing rule sections at the bottom */
+/* Container for rule divs */
+.rulebox {
+	position: relative;
+	overflow-y: scroll; /* to help make a division between the boxen */
+	overflow-x: hidden;
+	height: 100%;
+}
+
+#semcontrols {
+	color: #ffffff;
+	padding-top: 5px;
+	padding-bottom: 1px;
+	padding-left: 4px;
+}
+
+#semesters {
+	position: relative;
+	background-color: #666666;/*#C0C0C0;*/
+	margin:5px;
+	clear: both;
+	padding-bottom: 50px;
+}
+.semester {
+	position: relative;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	clear: both;
+}
+.semdesc {
+	position: relative;
+	background-color: #666666; /*#C0C0C0;*/
+	text-align: right;
+	height: 50px;
+	float: left;
+	width: 6.5em;
+	color: white;
+}
+.semblock {
+	position: relative;
+	display: block;
+	margin-left: 7em;
+}
+.semtick {
+	position: absolute;
+	float: left;
+	background-color: #FFFFFF;
+	height: 50px;
+	top: 0;
+}
+
+#rulesarea {
+	position: relative;
+}
+.rulecat {
+	position: absolute;
+}
+.rulecathead {
+	background-color: #CCCCCC;
+	height: 20px;
+}
+
+#coursebar {
+	height: 100%;
+	background-color: #999999;
+}
+#clheader {
+	height: 3.5em;
+	margin-bottom: 3px;
+}
+#courselist {
+	position: absolute;
+	overflow: auto;
+	background-color: #999999;
+}
+#clinner {
+	height: 100%;
+}
+#search {
+	font-size: 16px;
+}
+
+.bottomexpl {
+	font-weight: bold;
+	text-align: center;
+	font-variant: small-caps;
+	height: 20px;
+	background-color: #CCCCCC;
+}
+
+/* Courses on right side */
+
+.course {
+	position: relative;
+	background-color: #CCCCFF;
+	height: 48px;
+	text-align: center;
+	float: left;
+	overflow: hidden;
+	border: 1px solid #666666;
+	cursor: pointer;
+}
+/* For a "metacourse" created by a rule */
+.metac {
+	background-color: transparent;
+	border: 2px solid #9999FF;
+	overflow: visible;
+	margin-left: -1px;
+	padding-top: 15px;
+}
+.metactitle {
+	font-size: 80%;
+	height: 15px;
+	padding: 1px;
+	background-color: #9999FF;
+	font-weight: bold;
+	margin-top: -15px;
+}
+.coursecode {
+	text-align: left;
+	padding-left: 4px; padding-right: 2px;
+	font-size: 100%;
+}
+.coursetitle {
+	text-align: left;
+	padding-top: 2px;
+	padding-left: 4px; padding-right: 2px;
+	font-weight: bold;
+	font-size: 110%;
+}
+
+/* For tooltips */
+#tipel {
+	position: absolute;
+	border: 1px solid #000000;
+	background-color: #DDDDDD;
+}
+
+/* For course tooltips */
+.coursealert {
+	padding-left: 3px; padding-right: 3px;
+	background-color: #FFFFCC;
+}
+.coursetip {
+	padding-left: 3px; padding-right: 3px;
+}
+.coursetip dt {
+	float: left;
+	font-weight: bold;
+	width: 60px;
+	clear: left;
+	text-align: right;
+	padding-right: 4px;
+}
+.coursetip dd {
+	
+}
+
+/* For course alert images */
+.alert {
+	position: absolute;
+	top: 3px;
+}
+
+/* For metacourse tooltips */
+.metacoursetip {
+	padding-left: 3px; padding-right: 3px;
+}
+.metacoursetip ul {
+	padding-left: 2em;
+}
+
+/* Popup windows from main window */
+#popups {
+	display: none;
+}
+#popoptions_main {
+	padding-top: 10px;
+}
+#popoptions_main ul {
+	margin-top: 10px;
+	margin-left: 20px;
+}
+#login-msg {
+
+}
+
+/* For login area */
+#login-user, #login-pass, #register-email {
+	width:250px;
+}
+#login-button, #register-button {
+	margin-top: 5px;
+	width:250px;
+}
+
+.loginfields dt {
+	font-weight: bold;
+}
+.loginfields dd {
+	margin: 0px;
+}
+
+/* For management pane */
+#manage_courselist {
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+#manage_courselistnew {
+	height: 25px;
+	text-align: center;
+}
+.addnewinfo {
+	width: 70px;
+	float: left;
+	text-align: right;
+	padding-right: 8px;
+}
+
+#manage_revisionarea {
+	font-size: 120%;
+	float: left;
+}
+#manage_revisionheader {
+	background: #cccccc;
+	font-variant: small-caps;
+	font-weight: bold;
+	text-align: center;
+}
+
+.revisionslist {
+	background: #cccccc;
+	border-left: 3px solid #cccccc;
+	border-bottom: 3px solid #cccccc;
+}
+
+.revisionslist thead tr th {
+	font-weight: bold;
+	text-decoration: underline;
+}
+.revisionslist tbody tr td {
+	border-bottom: 1px solid #eeeeee;
+	padding: 2px 4px 2px 4px;
+}
+.revisionslist tbody tr:hover {
+	background: #eeeeee;
+	cursor: pointer;
+}
+.revisionslist tbody tr.selected {
+	background: #ffffff;
+	font-weight: bold;
+}
+
+
+#manage_editarea {
+	float: left;
+	background: white;
+	padding: 4px;
+	border: 2px solid #cccccc;
+	border-left: none;
+}
+
+#manage_intromessage {
+	border: 2px solid #cccccc;
+	background: white;
+	padding: 15px 8px 8px 8px;
+	font-size: 120%;
+}
+
+/* For the course data editor */
+.dataeditor {
+	clear: both;
+}
+.datadesc {
+	font-weight: bold;
+	width: 100px;
+	padding: 2px 4px 2px 0px;
+	text-align: right;
+	float: left;
+}
+.dataeditor input {
+	float: left;
+	width: 250px;
+}
+.dataeditor textarea {
+	float: left;
+	width: 250px;
+	height: 150px;
+}
+.dataeditorbutton {
+	width: 366px;
+}
+
+.courseeditlist {
+	width: 100%;
+}
+.courseeditlist thead tr th {
+	font-weight: bold;
+	font-size: 110%;
+	background: #333333;
+	color: #ffffff;
+}
+.courseeditlist tbody tr td {
+	border-bottom: 1px solid #eeeeee;
+}
+.courseeditlist tbody tr:hover {
+	background: #ffffff;
+	cursor: pointer;
+}
+.courseeditlist tbody tr.selected {
+	background: #666666;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+/* hide the print-only header */
+@media screen {
+	#printheader {
+		display: none;
+	}	
+}
+
+/* CSS FTW! */
+@media print {
+	body {
+		padding: 0px;
+		overflow: visible;
+		background-color: white;
+	}
+	#header {
+		display: none;
+	}
+	#printheader {
+		display: block;
+		background-color: white;
+		color: black;
+		width: 100%;
+		height: 2.5em;
+		display: block;
+		margin-bottom: -2.5em;
+	}
+}

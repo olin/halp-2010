@@ -1,0 +1,3 @@
+INSERT INTO `courses` (`Code`, `Title`, `Instructors`, `Credits`, `Hours`, `Corequisites`, `Prerequisites`, `Offered`, `Description`) VALUES 
+('SCI1110', 'ICB 1 Physics: Mechanics', 'Christianson, Holt', '3 SCI', '3-0-6', 'MTH 1110 and ENG 1110', '', 'Fall', 'This course provides...'),
+('MTH1110', 'ICB 1 Math: Calculus', 'Geddes, Tilley', '2 MTH', '2-0-4', 'SCI 1110 and ENG 1110', '', 'Fall', 'An overview of differential and integral calculus in the context of elementary numerical analysis');

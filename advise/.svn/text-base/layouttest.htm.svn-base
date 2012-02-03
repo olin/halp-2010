@@ -1,0 +1,47 @@
+<html>
+<head>
+<script type="text/javascript" src="lib/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="lib/jquery-ui-personalized-1.6rc4.min.js"></script>
+<script type="text/javascript" src="lib/jquery.layout.js"></script>
+<script type="text/javascript">
+var pagelayout;
+
+$(document).ready(function() {
+	pagelayout = $('body').layout({
+		north: {
+			resizable: false,
+			closable: false,
+			spacing_open: 0
+		}
+	});
+});
+</script>
+<style type="text/css">
+.ui-layout-pane { /* all 'panes' */ 
+	background: #ffffff; 
+	border: 1px solid #bbbbbb; 
+	padding: 10px;
+	overflow: auto;
+}
+.ui-layout-resizer {
+	background: #cccccc; 
+}
+.ui-layout-resizer:hover {
+	background: #ccccff;
+}
+
+.ui-layout-toggler {
+	background: #aaaaaa; 
+}
+.ui-layout-toggler:hover {
+	background: #aaaaff;
+}
+</style>
+</head>
+<body>
+<div class="ui-layout-center">Center</div>
+<div class="ui-layout-north">North</div>
+<div class="ui-layout-south">South</div>
+<div class="ui-layout-east">East</div>
+</body>
+</html>

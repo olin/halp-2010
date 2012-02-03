@@ -1,0 +1,6 @@
+The "all courses" view is now floated, so that search terms won't disappear.
+The view now resizes vertically as well as horizontally
+Courses disappear from the dragging box while they're being dragged (no more "duplicating")
+To reduce information overload, the descriptions are now loaded only when the course is clicked
+Courses are now colorized by type of class
+Metacourse boxes are now draggable separately from courses (it's still a bit buggy)

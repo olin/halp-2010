@@ -1,0 +1,161 @@
+INSERT INTO `Rules` (`Name`, `Category`, `Searcher`, `Code`) VALUES
+('AllCredits','Credits','','
+function() { return new Rules.Credits("120 cr. total",[],120)}'
+),
+('EngrCredits','Credits','ENGR','
+function() { return new Rules.Credits("46 cr. Engineering",["ENGR"],46)}'
+),
+('MathSciCredits','Credits','MTH,SCI','
+function() { return new Rules.Credits("30 cr. Math and Science",["MTH","SCI"],30)}'
+),
+('MathCredits','Credits','MTH','
+function() { return new Rules.Credits("10 cr. Math",["MTH"],10)}'
+),
+('AhsECredits','Credits','AHS','
+function() { return new Rules.Credits("28 cr. AHS and E!",["AHS","AHSE"],28)}'
+),
+('AhsCredits','Credits','AHS','
+function() { return new Rules.Credits("12 cr. AHS",["AHS"],12)}'
+),
+('MathCalculus','ICBs','MTH 1110','
+function () { return new Rules.SingleCourse("MTH 1110"); }'
+),
+('PhysicsMechanics','ICBs','SCI 1110','
+function () { return new Rules.SingleCourse("SCI 1110"); }'
+),
+('ECS','ICBs','ENGR 1110','
+function () { return new Rules.SingleCourse("ENGR 1110"); }'
+),
+('MathVectorCalculus','ICBs','MTH 1120','
+function () { return new Rules.SingleCourse("MTH 1120"); }'
+),
+('PhysicsEM','ICBs','SCI 1120','
+function () { return new Rules.SingleCourse("SCI 1120"); }'
+),
+('EDS','ICBs','ENGR 1120','
+function () { return new Rules.SingleCourse("ENGR 1120"); }'
+),
+('LinAlg','Math and Science','MTH 2120','
+function () { return new Rules.SingleCourse("MTH 2120"); }'
+),
+('ProbStat','Math and Science','MTH 2130','
+function () { return new Rules.SingleCourse("MTH 2130"); }'
+),
+('Bio','Math and Science','SCI 1210','
+function () { return new Rules.SingleCourse("SCI 1210"); }'
+),
+('ChemMatSci','Math and Science','SCI 1310,SCI 1410,SCI 2320','
+function () { return new Rules.NOf("Chem/MatSci",1,["SCI 1310", "SCI 1410", "SCI 2320"],"4 SCI"); }'
+),
+('PoE','Engineering','ENGR 2210','
+function () { return new Rules.SingleCourse("ENGR 2210"); }'
+),
+('SCOPE','Engineering','ENGR 4190','
+function () { return new Rules.SingleCourse("ENGR 4190"); }'
+),
+('OSS','Engineering','ISR 4198','
+function () { return new Rules.SingleCourse("ISR 4198"); }'
+),
+('DesignNature','Design','ENGR 1200','
+function () { return new Rules.SingleCourse("ENGR 1200"); }'
+),
+('UOCD','Design','ENGR 2250','
+function () { return new Rules.SingleCourse("ENGR 2250"); }'
+),
+('DesignDepth','Design','ENGR 3210,ENGR 3220,ENGR 3230,ENGR 3380','
+function () { return new Rules.NOf("Design Depth",1,["ENGR 3210","ENGR 3220","ENGR 3230","ENGR 3380"],"4 ENGR"); }'
+),
+('AHSFoundation','AHS + E!','AHSE 11','
+function () { return new Rules.NOf("Foundation",1,["AHSE 1100","AHSE 1122","AHSE 1130","AHSE 1140","AHSE 1150"],"4 AHS"); }'
+),
+('FBE','AHS + E!','AHSE 1500','
+function () { return new Rules.SingleCourse("AHSE 1500"); }'
+),
+('AHSConcentration','AHS + E!','','
+function () { return new Rules.NCredits(8, "Design a sequence of at least eight credits of courses in an approved AHS or Entrepreneurship discipline.", "AHSE"); }'
+),
+('AHSCapstone','AHS + E!','AHSE 4190,AHSE 4590','
+function () { return new Rules.NOf("Capstone",1,["AHSE 4190","AHSE 4590"],"4 AHSE"); }'
+),
+('ECEMathDiffEQ','ECE','MTH 2140','
+function () { return new Rules.SingleCourse("MTH 2140"); }'
+),
+('ECEMathDiscrete','ECE','MTH 2110','
+function () { return new Rules.SingleCourse("MTH 2110"); }'
+),
+('ECESigSys','ECE','ENGR 2410','
+function () { return new Rules.SingleCourse("ENGR 2410"); }'
+),
+('ECECircuits','ECE','ENGR 2420','
+function () { return new Rules.SingleCourse("ENGR 2420"); }'
+),
+('ECESoftwareDesign','ECE','ENGR 2510','
+function () { return new Rules.SingleCourse("ENGR 2510"); }'
+),
+('ECECompArch','ECE','ENGR 3410','
+function () { return new Rules.SingleCourse("ENGR 3410"); }'
+),
+('ECEAnalDig','ECE','ENGR 3420','
+function () { return new Rules.SingleCourse("ENGR 3420"); }'
+),
+('ECEHigherLevel','ECE','ENGR 3370,ENGR 3390,ENGR 3430,ENGR 3440,ENGR 3440,ENGR 3450,MTH 3140','
+function () { return new Rules.NOf("ECE 3xxx ENGR",1,["ENGR 3370","ENGR 3390","ENGR 3430","ENGR 3440","ENGR 3440","ENGR 3450","MTH 3140"],"4 ENGR"); }'
+),
+('MEMathDiffEQ','ME','MTH 2140','
+function () { return new Rules.SingleCourse("MTH 2140"); }'
+),
+('MEMathHigher','ME','MTH 3120,MTH 3170','
+function () { return new Rules.NOf("3xxx Math",1,["MTH 3120","MTH 3170"],"4 MTH"); }'
+),
+('METransport','ME','ENGR 3310','
+function () { return new Rules.SingleCourse("ENGR 3310"); }'
+),
+('MEMechSolids','ME','ENGR 3320','
+function () { return new Rules.SingleCourse("ENGR 3320"); }'
+),
+('MEMechDesign','ME','ENGR 3330','
+function () { return new Rules.SingleCourse("ENGR 3330"); }'
+),
+('MEDynamics','ME','ENGR 3340','
+function () { return new Rules.SingleCourse("ENGR 3340"); }'
+),
+('METhermo','ME','ENGR 3350','
+function () { return new Rules.SingleCourse("ENGR 3350"); }'
+),
+('MEHigherLevel','ME','ENGR 3360,ENGR 3370,ENGR 3380,ENGR 3390,ENGR 3820,ENGR 3830','
+function () { return new Rules.NOf("ME 3xxx ENGR",1,["ENGR 3360","ENGR 3370","ENGR 3380","ENGR 3390","ENGR 3820","ENGR 3830"],"4 ENGR"); }'
+),
+('ECDiscrete','E:C','MTH 2110','
+function () { return new Rules.SingleCourse("MTH 2110"); }'
+),
+('ECSoftwareDesign','E:C','ENGR 2510','
+function () { return new Rules.SingleCourse("ENGR 2510"); }'
+),
+('ECFOCS','E:C','ENGR 3520','
+function () { return new Rules.SingleCourse("ENGR 3520"); }'
+),
+('ECSoftSys','E:C','ENGR 3525','
+function () { return new Rules.SingleCourse("ENGR 3525"); }'
+),
+('ECAdditional','E:C','','
+function () { return new Rules.NCredits(8, "Please schedule at least 8 additional credits in computing", "NA"); }'
+),
+('MSDiffEQ','E:MS','MTH 2140','
+function () { return new Rules.SingleCourse("MTH 2140"); }'
+),
+('MSAdditional','E:MS','','
+function () { return new Rules.NCredits(20, "Please schedule 20 credits of engineering subjects appropriate to the program of study with a minimum of twelve credits in materials science subjects.", "NA"); }'
+),
+('SYSDiffEQ','E:SYS','MTH 2140','
+function () { return new Rules.SingleCourse("MTH 2140"); }'
+),
+('SYSECE','E:SYS','ENGR 2410,ENGR 2420,ENGR 2510,ENGR 3410,ENGR 3420','
+function () { return new Rules.NOf("ECE 3xxx ENGR",2,["ENGR 2410","ENGR 2420","ENGR 2510","ENGR 3410","ENGR 3420"],"4 ENGR"); }'
+),
+('SYSME','E:SYS','ENGR 3310,ENGR 3320,ENGR 3330,ENGR 3340,ENGR 3350','
+function () { return new Rules.NOf("ME 3xxx ENGR",2,["ENGR 3310","ENGR 3320","ENGR 3330","ENGR 3340","ENGR 3350"],"4 ENGR"); }'
+),
+('SYSSystems','E:SYS','ENGR 3710','
+function () { return new Rules.SingleCourse("ENGR 3710"); }'
+)
+;

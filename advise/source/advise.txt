@@ -1,0 +1,29 @@
+Things to try:
+Log in - primitive security (safe against injection, but that's about it - info is sent plaintext over POST).
+Drag a course onto the schedule. It should snap to a semester.
+Move courses from place to place on the schedule, and drag them off.
+Rules update as courses move.
+Click on a rule to see courses that will satisfy that requirement.
+Click on a rule grouping to expand or collapse that group. Group status icons should properly update.
+The "number of credits" rules should properly update, and work correctly for courses with heterogeneous credits (eg Error Control Codes)
+Search in the box for course codes (MTH 1110, for example), course titles, or faculty names.
+Saving/loading of a single schedule (logging out and logging back in again should produce the same schedule)
+Semesters are selectable for leave of absence, etc. The selection should persist from session to session
+Selecting a major (via "Options") will update the list of requirements and persist between sessions. The majors in the catalog are currently implemented.
+Printing support via @media CSS directive (try print preview)
+Should work in IE 6+, Firefox 3+, Safari 3+
+
+Not yet implemented:
+Courses not in catalog
+Additional course information on mouseover
+Custom reorganization within a semester
+What to do about registration: will everyone be pre-registered?
+Credit accounting if a course is failed
+Distinguishing between completed courses and planned courses
+When a four-year plan should be formulated - when do "warnings" become "errors"?
+Discussed with Jayesh
+	Course colorcoding
+	A "sandbox" for courses a user is interested in taking
+	Separate "advisor" and "student" views
+	Changing the interface to have requirements more clearly identified and listed on the side
+	A "pile" of courses in one place on a review, instead of in the lower interface

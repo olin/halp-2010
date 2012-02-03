@@ -1,0 +1,1 @@
+java -jar jsrun.jar app\run.js -a -t=templates\jsdoc "C:\Apps\wamp\www\advise\advise\js"

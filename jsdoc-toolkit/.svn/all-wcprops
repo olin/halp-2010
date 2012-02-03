@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/AdvisingTool/!svn/ver/20/jsdoc-toolkit
+END
+changes.txt
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/AdvisingTool/!svn/ver/9/jsdoc-toolkit/changes.txt
+END
+run.bat
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/AdvisingTool/!svn/ver/9/jsdoc-toolkit/run.bat
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/AdvisingTool/!svn/ver/9/jsdoc-toolkit/README.txt
+END
+jsrun.jar
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/AdvisingTool/!svn/ver/9/jsdoc-toolkit/jsrun.jar
+END
+jsdebug.jar
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/AdvisingTool/!svn/ver/9/jsdoc-toolkit/jsdebug.jar
+END

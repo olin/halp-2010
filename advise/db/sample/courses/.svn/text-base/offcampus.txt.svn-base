@@ -1,0 +1,2 @@
+INSERT INTO `Courses` (`Source`, `Code`, `Nickname`, `Title`, `Instructors`, `Credits`, `Hours`, `Corequisites`, `Prerequisites`, `Offered`, `Description`) VALUES 
+('Off-Campus','XREG 000','XREG','Make your own courses!','','','','','','','Add the off-campus courses you have taken to this category by clicking "Add New" at the bottom of the courses list.');

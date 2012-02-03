@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>HALP Redirection</title>
+<style type="text/css">
+html {
+	height: 100%;
+	overflow: hidden;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font: normal 12px auto "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	height: 100%;
+	overflow: hidden;
+	background-color: #555555;
+}
+#infohdr {
+	position: relative;
+	margin-bottom: 8px;
+}
+#pagetitle {
+	position: absolute;
+	left: 130px; top: 10px;
+	font-size: 30px;
+	color: #FFFFFF;
+}
+#center {
+	position: absolute;
+	padding: 0; margin: 0; border: 0;
+	width: 500px;
+	margin-left: -250px;
+	left: 50%;
+	top: 10px;
+}
+
+#content {
+	position: absolute;
+	padding: 0; margin: 0; border: 0;
+	background: #ffffff;
+	left: 0px; top: 65px;
+	width: 500px;
+	font-size: 16px;
+}
+
+.rdlnk {
+	font-weight: bold;
+}
+</style>
+<script type="text/javascript" language="javascript">
+var pages = {
+	"feedback":"http://acl.olin.edu/projects/AdvisingTool/wiki/FirstReleaseFeedback"
+};
+function doload() {
+	var loc = document.location.toString();
+	var qloc = loc.indexOf("?");
+	if (qloc > -1) {
+		var rstr = loc.substring(qloc+1);
+		
+		//go to the page if it exists
+		if (pages[rstr]) {
+			document.location = pages[rstr];
+		}
+	}
+}
+</script>
+</head>
+
+<body onload="doload()">
+
+<div id="center">
+	<div id="infohdr">
+		<img id="logo" src="img/halplogo_small.png" alt=""/>
+		<div id="pagetitle">
+			Redirection
+		</div>
+	</div>
+	
+	<div id="content">
+		<img src="img/ctl.gif" style="position: absolute; left:0px; top:0px;">
+		<img src="img/cbl.gif" style="position: absolute; left:0px; bottom:0px;">
+		<img src="img/ctr.gif" style="position: absolute; right:0px; top:0px;">
+		<img src="img/cbr.gif" style="position: absolute; right:0px; bottom:0px;">		
+		
+		<div style="text-align:center; font-size: 110%; padding-top: 5px;">
+		Where would you like to go?
+		</div>
+		<div>
+			<ul>
+			<li>
+				<div><a class="rdlnk" href="http://acl.olin.edu/advising/" target="_top">First Release Link</a></div>
+				<div>Log in to HALP here!</div>
+			</li>
+			<li>
+				<div><a class="rdlnk" href="http://acl.olin.edu/projects/AdvisingTool/wiki/FirstReleaseQuestions" target="_top">Questions Page</a></div>
+				<div>Have questions? See if others have answers here.</div>
+			</li>
+			<li>
+				<div><a class="rdlnk" href="http://acl.olin.edu/projects/AdvisingTool/wiki/FirstReleaseFeedback" target="_top">First Release Feedback</a></div>
+				<div>Leave your comments, suggestions, and feedback.</div>
+			</li>
+			<li>
+				<div><a class="rdlnk" href="http://acl.olin.edu/projects/AdvisingTool/" target="_top">Main Wiki Page</a></div>
+				<div>The ACL Trac project for HALP</div>
+			</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>

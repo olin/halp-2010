@@ -1,0 +1,6 @@
+INSERT INTO `Majors` (`Code`, `Name`) VALUES
+('ECE', 'Electrical and Computer Engineering'),
+('ME','Mechanical Engineering'),
+('E:C','Engineering: Computing'),
+('E:MS','Engineering: Materials Science'),
+('E:SYS','Engineering: Systems');

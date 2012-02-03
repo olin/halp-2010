@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/AdvisingTool/!svn/ver/28/advise/db
+END
+connect.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/AdvisingTool/!svn/ver/5/advise/db/connect.php
+END
+print.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/AdvisingTool/!svn/ver/22/advise/db/print.php
+END
+util.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/AdvisingTool/!svn/ver/19/advise/db/util.php
+END
+stats.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/AdvisingTool/!svn/ver/28/advise/db/stats.php
+END
+create.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/AdvisingTool/!svn/ver/27/advise/db/create.php
+END
+close.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/AdvisingTool/!svn/ver/5/advise/db/close.php
+END
+req.php
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/AdvisingTool/!svn/ver/28/advise/db/req.php
+END

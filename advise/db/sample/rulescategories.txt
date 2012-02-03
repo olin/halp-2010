@@ -1,0 +1,13 @@
+INSERT INTO `RulesCategories` (`Category`, `ShortCategory`, `Color`) VALUES
+('Credits','Cr','100,100,100'),
+('ICBs','ICB','102,140,255'),
+('Math and Science','MTHSCI','255,140,102'),
+('Engineering','ENGR','140,140,140'),
+('Design','DESIGN','140,255,102'),
+('AHS + E!','AHS+E','140,102,255'),
+('ECE','ECE','255,201,41'),
+('ME','ME','255,201,41'),
+('E:C','E:C','255,201,41'),
+('E:MS','E:MS','255,201,41'),
+('E:SYS','E:SYS','255,201,41')
+;
